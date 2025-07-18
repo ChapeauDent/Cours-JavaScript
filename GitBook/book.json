@@ -1,0 +1,35 @@
+{
+  "title": "Cours JavaScript Complet",
+  "description": "Formation complète JavaScript de débutant à expert",
+  "author": "Votre Nom",
+  "language": "fr",
+  "gitbook": "3.2.3",
+  "plugins": [
+    "hints",
+    "tabs",
+    "expandable-chapters",
+    "code",
+    "prism",
+    "-highlight",
+    "search-pro",
+    "advanced-emoji",
+    "github",
+    "editlink"
+  ],
+  "pluginsConfig": {
+    "theme-default": {
+      "showLevel": true
+    },
+    "github": {
+      "url": "https://github.com/votre-username/cours-javascript"
+    },
+    "editlink": {
+      "base": "https://github.com/votre-username/cours-javascript/edit/main",
+      "label": "Éditer cette page"
+    }
+  },
+  "structure": {
+    "readme": "README.md",
+    "summary": "SUMMARY.md"
+  }
+}
