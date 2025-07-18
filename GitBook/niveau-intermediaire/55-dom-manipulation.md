@@ -938,8 +938,8 @@ La manipulation DOM native reste importante pour :
 ### Prochaines étapes
 
 Après avoir maîtrisé la manipulation DOM :
-- **[Event Loop et Asynchrone](77-event-loop-asynchrone-base.md)** : Comprendre l'exécution JavaScript
-- **[Gestion d'erreurs](80-gestion-erreurs.md)** : Gérer les erreurs robustement
+- **[Event Loop et Asynchrone](60-event-loop-asynchrone-base.md)** : Comprendre l'exécution JavaScript
+- **[Gestion d'erreurs](65-gestion-erreurs.md)** : Gérer les erreurs robustement
 - **[API Fetch](../niveau-avance/110-fetch-api-avance.md)** : Récupérer des données externes
 - **[WebComponents](../niveau-avance/115-concepts-avances.md)** : Créer des composants réutilisables
 

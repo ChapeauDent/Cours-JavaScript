@@ -1,6 +1,6 @@
 # Prototypes et Héritage
 
-> **Navigation :** [← Classes et POO](80-classes-poo.md) | [DOM Manipulation →](85-dom-manipulation.md)
+> **Navigation :** [← Classes et POO](45-classes-poo.md) | [DOM Manipulation →](55-dom-manipulation.md)
 
 ## 🎯 Objectifs d'apprentissage
 
@@ -1197,8 +1197,8 @@ UserController.setupEventListeners = function() {
 {% tabs %}
 {% tab title="📚 Approfondissement" %}
 **Concepts liés :**
-- [Classes et POO](80-classes-poo.md) - Syntaxe moderne
-- [Fonctions Avancées](65-fonctions-avancees.md) - Constructors et this
+- [Classes et POO](45-classes-poo.md) - Syntaxe moderne
+- [Fonctions Avancées](15-fonctions-avancees.md) - Constructors et this
 - [Modules et Organisation](95-modules-organisation.md) - Structurer le code
 
 **Documentation officielle :**
@@ -1249,4 +1249,4 @@ UserController.setupEventListeners = function() {
 
 ---
 
-> **Navigation :** [← Classes et POO](80-classes-poo.md) | [DOM Manipulation →](85-dom-manipulation.md)
+> **Navigation :** [← Classes et POO](45-classes-poo.md) | [DOM Manipulation →](55-dom-manipulation.md)

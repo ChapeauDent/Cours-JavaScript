@@ -1,6 +1,6 @@
 # Classes ES6 et Programmation Orientée Objet
 
-> **Navigation :** [← Arrays et Méthodes Avancées](70-arrays-methodes-avancees.md) | [Prototypes et Héritage →](85-prototypes-heritage.md)
+> **Navigation :** [← Objets JavaScript](40-objets.md) | [Prototypes et Héritage →](50-prototypes-heritage.md)
 
 ## 🎯 Objectifs d'apprentissage
 
@@ -1060,7 +1060,7 @@ class Warrior extends Character {
 {% tabs %}
 {% tab title="📚 Approfondissement" %}
 **Concepts liés :**
-- [Prototypes et Héritage](85-prototypes-heritage.md) - Mécanisme sous-jacent
+- [Prototypes et Héritage](50-prototypes-heritage.md) - Mécanisme sous-jacent
 - [Modules et Organisation](95-modules-organisation.md) - Structure du code
 - [Design Patterns](120-design-patterns.md) - Patterns avec classes
 
@@ -1111,4 +1111,4 @@ class Warrior extends Character {
 
 ---
 
-> **Navigation :** [← Arrays et Méthodes Avancées](70-arrays-methodes-avancees.md) | [Prototypes et Héritage →](85-prototypes-heritage.md)
+> **Navigation :** [← Objets JavaScript](40-objets.md) | [Prototypes et Héritage →](50-prototypes-heritage.md)

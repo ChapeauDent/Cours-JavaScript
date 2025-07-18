@@ -739,13 +739,13 @@ const jeuDeCartes = {
 
 ### Concepts précédents
 - [Variables et types](../niveau-debutant/15-variables-declarations.md) - Foundation des propriétés
-- [Fonctions](45-fonctions.md) - Base des méthodes
-- [Arrays](70-arrays-methodes-avancees.md) - Structures de données
+- [Fonctions](05-fonctions.md) - Base des méthodes
+- [Arrays](25-arrays-methodes-avancees.md) - Structures de données
 
 ### Concepts suivants
-- [Classes](75-classes-poo.md) - Évolution moderne des objets
-- [Prototypes](72-prototypes-heritage.md) - Mécanisme d'héritage
-- [Destructuring](52-destructuring-spread.md) - Extraction de propriétés
+- [Classes](45-classes-poo.md) - Évolution moderne des objets
+- [Prototypes](50-prototypes-heritage.md) - Mécanisme d'héritage
+- [Destructuring](30-destructuring-spread.md) - Extraction de propriétés
 
 ---
 
@@ -807,8 +807,8 @@ const gestionnaireDesTaches = {
 ---
 
 **Navigation :**
-- ← Précédent : [Arrays et Méthodes Avancées](70-arrays-methodes-avancees.md)
-- → Suivant : [Classes et POO](75-classes-poo.md)
+- ← Précédent : [JSON et Manipulation](35-json-manipulation.md)
+- → Suivant : [Classes et POO](45-classes-poo.md)
 
 ---
 

@@ -40,10 +40,10 @@
 
 ## 🔴 Niveau Avancé
 
-* [⏳ Programmation Asynchrone](niveau-avance/05-programmation-asynchrone.md)
-* [🚨 Gestion d'Erreurs Avancée](niveau-avance/10-gestion-erreurs-avancee.md)
-* [📦 Modules et Organisation](niveau-avance/15-modules-organisation.md)
-* [📘 Introduction à TypeScript](niveau-avance/20-typescript-introduction.md)
+* [⏳ Programmation Asynchrone](niveau-avance/programmation-asynchrone.md)
+* [🚨 Gestion d'Erreurs Avancée](niveau-avance/gestion-erreurs-avancee.md)
+* [📦 Modules et Organisation](niveau-avance/modules-organisation.md)
+* [📘 TypeScript Introduction](niveau-avance/typescript-introduction.md)
 * [🌐 APIs du Navigateur](niveau-avance/apis-navigateur.md)
 * [🔥 Vite et Build Moderne](niveau-avance/vite-modern-bundling.md)
 * [📦 NPM/Yarn Management](niveau-avance/npm-yarn-dependency-management.md)

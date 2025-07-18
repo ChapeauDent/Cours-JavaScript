@@ -1095,7 +1095,7 @@ const donnees = {
 ## 🔗 Liens avec d'autres concepts
 
 ### Concepts précédents
-- [Arrays](70-arrays-methodes-avancees.md) - Base pour le destructuring d'arrays
+- [Arrays](25-arrays-methodes-avancees.md) - Base pour le destructuring d'arrays
 - [Objets](75-objets.md) - Foundation pour le destructuring d'objets
 - [Fonctions](45-fonctions.md) - Paramètres et arguments
 
