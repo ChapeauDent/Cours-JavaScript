@@ -46,39 +46,19 @@
 * [📘 Introduction à TypeScript](niveau-avance/20-typescript-introduction.md)
 * [🌐 APIs du Navigateur](niveau-avance/25-apis-navigateur.md)
 * [⚡ Vite et Build Moderne](niveau-avance/30-vite-modern-bundling.md)
-*   * [NPM et Yarn - Gestion des dépendances](niveau-avance/35-npm-yarn-dependency-management.md)
-  * [WebSockets et Socket.IO](niveau-avance/40-websockets-socket-io.md)
-  * [Testing JavaScript Avancé](niveau-avance/45-testing-javascript.md)
-  * [Optimisation et Performance](niveau-avance/50-optimisation-performance.md)
-  * [Écosystème et Outils JavaScript](niveau-avance/55-outils-ecosysteme.md)
-* [🔌 WebSockets et Socket.IO](niveau-avance/websockets-socket-io.md)
-* [🧪 Testing JavaScript](niveau-avance/testing-javascript.md)
-* [⚡ Optimisation Performance](niveau-avance/optimisation-performance.md)
-* [🛡️ Sécurité](niveau-avance/security-best-practices.md)
+* [📦 NPM et Yarn - Gestion des dépendances](niveau-avance/35-npm-yarn-dependency-management.md)
+* [🔌 WebSockets et Socket.IO](niveau-avance/40-websockets-socket-io.md)
+* [🧪 Testing JavaScript Avancé](niveau-avance/45-testing-javascript.md)
+* [⚡ Optimisation et Performance](niveau-avance/50-optimisation-performance.md)
+* [🛠️ Écosystème et Outils JavaScript](niveau-avance/55-outils-ecosysteme.md)
+* [🧠 Concepts JavaScript Avancés](niveau-avance/60-concepts-avances.md)
 
-## 🔵 Niveau Spécialisé
-
-* [🎮 Développement de Jeux](niveau-specialise/game-development.md)
-* [📱 Applications Mobile](niveau-specialise/mobile-development.md)
-* [🖥️ Applications Desktop](niveau-specialise/desktop-development.md)
-* [🌐 IoT et Hardware](niveau-specialise/iot-javascript.md)
-* [🚀 DevOps JavaScript](niveau-specialise/devops-javascript.md)
-
-## 🛠️ Projets Pratiques
+## ️ Projets Pratiques
 
 * [📋 Vue d'ensemble](projets-pratiques/README.md)
 * [🟢 Projets Débutants](projets-pratiques/projets-debutants/README.md)
-  * [🧮 Calculatrice Interactive](projets-pratiques/projets-debutants/calculatrice.md)
-  * [📝 Todo List Simple](projets-pratiques/projets-debutants/todo-list.md)
-  * [🎲 Jeu de Devinettes](projets-pratiques/projets-debutants/jeu-devinettes.md)
-* [🟡 Projets Intermédiaires](projets-pratiques/projets-intermediaires/README.md)
-  * [🌤️ API Météo](projets-pratiques/projets-intermediaires/api-meteo.md)
-  * [📞 Gestionnaire Contacts](projets-pratiques/projets-intermediaires/gestionnaire-contacts.md)
-  * [💬 Chat Temps Réel](projets-pratiques/projets-intermediaires/chat-temps-reel.md)
-* [🔴 Projets Avancés](projets-pratiques/projets-avances/README.md)
-  * [🏗️ Framework MVC](projets-pratiques/projets-avances/framework-mvc.md)
-  * [📊 Dashboard Analytics](projets-pratiques/projets-avances/dashboard-analytics.md)
-  * [📱 PWA Complète](projets-pratiques/projets-avances/pwa-complete.md)
+* [ Projets Intermédiaires](projets-pratiques/projets-intermediaires/README.md)
+* [ Projets Avancés](projets-pratiques/projets-avances/README.md)
 
 ## 📚 Ressources
 
@@ -86,19 +66,3 @@
 * [🛠️ Outils Recommandés](ressources/outils.md)
 * [❓ FAQ](ressources/faq.md)
 * [📖 Glossaire](ressources/glossaire.md)
-* [🆘 Support](ressources/support.md)
-
-## 📊 Évaluation
-
-* [🧠 Quiz par Niveau](evaluation/quiz-niveau.md)
-* [💼 Tests Techniques](evaluation/tests-techniques.md)
-* [🏆 Certification](evaluation/certification.md)
-* [📈 Suivi de Progression](evaluation/progression.md)
-
-***
-
-## 📞 Support
-
-* [💬 Discord Communauté](https://discord.gg/javascript-fr)
-* [🐛 Signaler un Bug](https://github.com/javascript-course/issues)
-* [💡 Proposer une Amélioration](https://github.com/javascript-course/discussions)
