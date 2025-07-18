@@ -374,16 +374,37 @@ class Validator<T> {
     
     // TODO: Ajouter des règles de validation
     addRule(rule: ValidationRule<T>): this {
-        // Implémenter
+        this.rules.push(rule);
         return this;
     }
     
     // TODO: Valider les données
     validate(data: unknown): ValidationResult<T> {
-        // Implémenter la logique de validation
-        // 1. Vérifier que data correspond au type T
+        const errors: string[] = [];
+        
+        // 1. Vérification basique du type
+        if (!data || typeof data !== 'object') {
+            return {
+                success: false,
+                errors: ['Les données doivent être un objet valide']
+            };
+        }
+        
         // 2. Appliquer toutes les règles
+        for (const rule of this.rules) {
+            const value = (data as any)[rule.field];
+            
+            if (!rule.validate(value, data as T)) {
+                errors.push(rule.message);
+            }
+        }
+        
         // 3. Retourner le résultat
+        return {
+            success: errors.length === 0,
+            data: errors.length === 0 ? data as T : undefined,
+            errors
+        };
     }
     
     // TODO: Méthodes helper pour règles communes
