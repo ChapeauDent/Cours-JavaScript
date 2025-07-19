@@ -169,7 +169,7 @@ obtenirUtilisateur(id, (utilisateur) => {
 - Maintenance difficile
 {% endtab %}
 
-{% tab title="🔧 Gestion d'erreurs" %}
+{% tab title="🔧 Gestion erreurs" %}
 ```javascript
 // Convention Node.js : error-first callback
 function lireFichier(nom, callback) {

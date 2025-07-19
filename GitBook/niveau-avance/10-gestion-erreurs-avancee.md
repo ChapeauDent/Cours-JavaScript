@@ -32,7 +32,7 @@ Une erreur non gérée peut :
 - ❌ Impacter votre réputation
 {% endtab %}
 
-{% tab title="🔍 Types d'erreurs" %}
+{% tab title="🔍 Types erreurs" %}
 ```javascript
 // 🎯 Erreurs de syntaxe (détectées à l'analyse)
 const malformed = { invalid syntax; // SyntaxError
@@ -584,7 +584,7 @@ class ValidationError extends Error {
 ### Création d'erreurs métier
 
 {% tabs %}
-{% tab title="🏗️ Classes d'erreur" %}
+{% tab title="🏗️ Classes erreur" %}
 ```javascript
 // Classe de base pour erreurs applicatives
 class AppError extends Error {
@@ -893,7 +893,7 @@ app.use(middlewareGestionErreurs(gestionnaireErreurs));
 ### Surveillance proactive
 
 {% tabs %}
-{% tab title="📈 Métriques d'erreurs" %}
+{% tab title="📈 Métriques erreurs" %}
 ```javascript
 // Collecteur de métriques d'erreurs
 class MetriquesErreurs {

@@ -29,7 +29,7 @@
 {% endhint %}
 
 {% tabs %}
-{% tab title="🧬 Qu'est-ce qu'un prototype ?" %}
+{% tab title="🧬 Qu'est-ce qu'un prototype" %}
 **Chaque objet JavaScript a un lien vers un autre objet appelé son prototype.**
 
 ```javascript
@@ -405,7 +405,7 @@ console.log("Voiture électrique hérite de Vehicule:",
 ## 🔍 Inspection et débogage
 
 {% tabs %}
-{% tab title="🕵️ Méthodes d'inspection" %}
+{% tab title="🕵️ Méthodes inspection" %}
 ```javascript
 let animal = { 
     type: "animal",

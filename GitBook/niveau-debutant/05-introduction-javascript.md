@@ -569,404 +569,131 @@ console.log("Message de débogage");       // Affichage console
 
 ## 🧪 Exercices pratiques
 
-### 🎯 Exercice 1 : Calculatrice simple
+### 🎯 Exercice 1 : Vos premiers messages
 
 {% hint style="info" %}
-**Objectif :** Créer une calculatrice basique avec JavaScript
+**Objectif :** Apprendre à afficher des messages dans la console
 {% endhint %}
 
 ```javascript
-// Créez une page avec :
-// - 2 champs pour saisir des nombres
-// - 4 boutons : +, -, ×, ÷
-// - Une zone pour afficher le résultat
+// Dans la console du navigateur, tapez ces commandes une par une :
 
-// Code de démarrage :
-function additionner() {
-    // Récupérer les valeurs des champs
-    // Calculer la somme
-    // Afficher le résultat
-}
+// 1. Afficher un message simple
+console.log("Hello JavaScript !");
+
+// 2. Afficher votre nom
+console.log("Je m'appelle [VOTRE NOM]");
+
+// 3. Faire un calcul simple
+console.log(5 + 3);
+
+// 4. Afficher plusieurs choses à la fois
+console.log("Résultat :", 10 - 4);
 ```
 
 <details>
-<summary>💡 Solution</summary>
+<summary>💡 À essayer</summary>
 
-```html
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>🧮 Ma calculatrice</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 400px;
-            margin: 50px auto;
-            padding: 20px;
-        }
-        
-        .calculatrice {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        input {
-            width: 100%;
-            padding: 12px;
-            margin: 5px 0;
-            font-size: 18px;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        
-        .boutons {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            margin: 20px 0;
-        }
-        
-        button {
-            padding: 15px;
-            font-size: 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            background: #007bff;
-            color: white;
-            transition: background 0.3s;
-        }
-        
-        button:hover {
-            background: #0056b3;
-        }
-        
-        .resultat {
-            font-size: 24px;
-            font-weight: bold;
-            text-align: center;
-            padding: 15px;
-            background: #e7f3ff;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
-    <div class="calculatrice">
-        <h1>🧮 Ma calculatrice JavaScript</h1>
-        
-        <input type="number" id="nombre1" placeholder="Premier nombre" value="5">
-        <input type="number" id="nombre2" placeholder="Deuxième nombre" value="3">
-        
-        <div class="boutons">
-            <button onclick="calculer('+')" title="Addition">➕</button>
-            <button onclick="calculer('-')" title="Soustraction">➖</button>
-            <button onclick="calculer('*')" title="Multiplication">✖️</button>
-            <button onclick="calculer('/')" title="Division">➗</button>
-        </div>
-        
-        <div id="resultat" class="resultat">
-            Résultat : Choisissez une opération
-        </div>
-        
-        <button onclick="effacer()" style="width: 100%; margin-top: 10px; background: #dc3545;">
-            🗑️ Effacer
-        </button>
-    </div>
+```javascript
+// Testez ces exemples dans la console :
 
-    <script>
-        function calculer(operation) {
-            // Récupérer les valeurs des champs
-            const nombre1 = parseFloat(document.getElementById('nombre1').value);
-            const nombre2 = parseFloat(document.getElementById('nombre2').value);
-            
-            // Vérifier que les nombres sont valides
-            if (isNaN(nombre1) || isNaN(nombre2)) {
-                afficherResultat("❌ Veuillez saisir des nombres valides");
-                return;
-            }
-            
-            let resultat;
-            let symbole;
-            
-            // Effectuer le calcul selon l'opération
-            switch (operation) {
-                case '+':
-                    resultat = nombre1 + nombre2;
-                    symbole = '➕';
-                    break;
-                case '-':
-                    resultat = nombre1 - nombre2;
-                    symbole = '➖';
-                    break;
-                case '*':
-                    resultat = nombre1 * nombre2;
-                    symbole = '✖️';
-                    break;
-                case '/':
-                    if (nombre2 === 0) {
-                        afficherResultat("❌ Division par zéro impossible");
-                        return;
-                    }
-                    resultat = nombre1 / nombre2;
-                    symbole = '➗';
-                    break;
-                default:
-                    afficherResultat("❌ Opération inconnue");
-                    return;
-            }
-            
-            // Arrondir le résultat si nécessaire
-            if (resultat % 1 !== 0) {
-                resultat = Math.round(resultat * 100) / 100;
-            }
-            
-            // Afficher le résultat
-            afficherResultat(`${nombre1} ${symbole} ${nombre2} = ${resultat}`);
-            
-            // Log dans la console
-            console.log(`Calcul effectué : ${nombre1} ${operation} ${nombre2} = ${resultat}`);
-        }
-        
-        function afficherResultat(texte) {
-            document.getElementById('resultat').textContent = texte;
-        }
-        
-        function effacer() {
-            document.getElementById('nombre1').value = '';
-            document.getElementById('nombre2').value = '';
-            afficherResultat('Résultat : Choisissez une opération');
-            console.log('Calculatrice effacée');
-        }
-        
-        // Message de bienvenue
-        console.log('🧮 Calculatrice JavaScript chargée !');
-        console.log('💡 Conseil : Essayez différentes opérations');
-    </script>
-</body>
-</html>
+console.log("🎉 Bienvenue en JavaScript !");
+console.log("2 + 2 =", 2 + 2);
+console.log("Mon âge :", 25);
+console.log("JavaScript", "est", "génial", "!");
+
+// Essayez aussi :
+console.log("Ma première" + " " + "phrase concaténée");
+console.log(365 * 24); // Nombre d'heures dans une année
 ```
 
 </details>
 
-### 🎯 Exercice 2 : Générateur de citations
+### 🎯 Exercice 2 : Jouer avec les calculs
 
 {% hint style="info" %}
-**Objectif :** Afficher des citations inspirantes de façon aléatoire
+**Objectif :** Utiliser JavaScript comme une calculatrice
 {% endhint %}
 
 ```javascript
-// Créez une page qui :
-// - Affiche une citation au hasard
-// - Change de citation avec un bouton
-// - Montre l'auteur de la citation
+// Tapez ces calculs dans la console :
 
-const citations = [
-    { texte: "Le succès c'est tomber sept fois, se relever huit.", auteur: "Proverbe japonais" },
-    // Ajoutez d'autres citations...
-];
+// Additions
+console.log("10 + 5 =", 10 + 5);
+
+// Soustractions  
+console.log("20 - 8 =", 20 - 8);
+
+// Multiplications
+console.log("6 × 7 =", 6 * 7);
+
+// Divisions
+console.log("15 ÷ 3 =", 15 / 3);
 ```
 
 <details>
-<summary>💡 Solution</summary>
+<summary>💡 Exercices bonus</summary>
 
-```html
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>💬 Générateur de citations</title>
-    <style>
-        body {
-            font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .container {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-            max-width: 600px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-        }
-        
-        .citation {
-            font-size: 24px;
-            font-style: italic;
-            color: #333;
-            margin: 30px 0;
-            line-height: 1.6;
-            min-height: 120px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .auteur {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 30px;
-            font-weight: bold;
-        }
-        
-        button {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 18px;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-        
-        .compteur {
-            margin-top: 20px;
-            color: #888;
-            font-size: 14px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>💬 Citations Inspirantes</h1>
-        
-        <div class="citation" id="citation">
-            Cliquez sur le bouton pour découvrir une citation inspirante !
-        </div>
-        
-        <div class="auteur" id="auteur">
-            
-        </div>
-        
-        <button onclick="nouvelleCitation()">
-            ✨ Nouvelle citation
-        </button>
-        
-        <div class="compteur" id="compteur">
-            Citations affichées : 0
-        </div>
-    </div>
+```javascript
+// Calculez votre âge en jours (approximatif) :
+console.log("Mon âge en jours :", 25 * 365);
 
-    <script>
-        const citations = [
-            {
-                texte: "Le succès c'est tomber sept fois, se relever huit.",
-                auteur: "Proverbe japonais"
-            },
-            {
-                texte: "La seule façon de faire du bon travail est d'aimer ce que vous faites.",
-                auteur: "Steve Jobs"
-            },
-            {
-                texte: "L'imagination est plus importante que la connaissance.",
-                auteur: "Albert Einstein"
-            },
-            {
-                texte: "Ne remettez pas à demain ce que vous pouvez faire aujourd'hui.",
-                auteur: "Benjamin Franklin"
-            },
-            {
-                texte: "La vie, c'est comme une bicyclette, il faut avancer pour ne pas perdre l'équilibre.",
-                auteur: "Albert Einstein"
-            },
-            {
-                texte: "Il n'y a que deux façons de vivre sa vie : l'une en faisant comme si rien n'était un miracle, l'autre en faisant comme si tout était un miracle.",
-                auteur: "Albert Einstein"
-            },
-            {
-                texte: "Le futur appartient à ceux qui croient en la beauté de leurs rêves.",
-                auteur: "Eleanor Roosevelt"
-            },
-            {
-                texte: "Soyez vous-même, tous les autres sont déjà pris.",
-                auteur: "Oscar Wilde"
-            },
-            {
-                texte: "Un voyage de mille lieues commence toujours par un premier pas.",
-                auteur: "Lao Tseu"
-            },
-            {
-                texte: "La programmation c'est l'art de faire faire à l'ordinateur exactement ce que vous voulez.",
-                auteur: "Donald Knuth"
-            }
-        ];
-        
-        let citationActuelle = -1;
-        let nombreCitationsAffichees = 0;
-        
-        function nouvelleCitation() {
-            // Choisir une citation différente de la précédente
-            let nouvelIndex;
-            do {
-                nouvelIndex = Math.floor(Math.random() * citations.length);
-            } while (nouvelIndex === citationActuelle && citations.length > 1);
-            
-            citationActuelle = nouvelIndex;
-            
-            // Récupérer la citation
-            const citation = citations[citationActuelle];
-            
-            // Effet de transition
-            const elementCitation = document.getElementById('citation');
-            const elementAuteur = document.getElementById('auteur');
-            
-            elementCitation.style.opacity = '0';
-            elementAuteur.style.opacity = '0';
-            
-            setTimeout(() => {
-                elementCitation.textContent = `"${citation.texte}"`;
-                elementAuteur.textContent = `— ${citation.auteur}`;
-                
-                elementCitation.style.opacity = '1';
-                elementAuteur.style.opacity = '1';
-            }, 200);
-            
-            // Mettre à jour le compteur
-            nombreCitationsAffichees++;
-            document.getElementById('compteur').textContent = 
-                `Citations affichées : ${nombreCitationsAffichees}`;
-            
-            // Log dans la console
-            console.log(`Citation #${nombreCitationsAffichees} affichée :`, citation);
-        }
-        
-        // Afficher une citation au chargement de la page
-        window.onload = function() {
-            console.log('💬 Générateur de citations chargé !');
-            console.log(`📚 ${citations.length} citations disponibles`);
-            nouvelleCitation();
-        };
-        
-        // Possibilité d'appuyer sur Espace pour nouvelle citation
-        document.addEventListener('keydown', function(event) {
-            if (event.code === 'Space') {
-                event.preventDefault();
-                nouvelleCitation();
-            }
-        });
-        
-        console.log('💡 Conseil : Appuyez sur la barre d\'espace pour une nouvelle citation !');
-    </script>
-</body>
-</html>
+// Calculez le périmètre d'un carré de côté 5 :
+console.log("Périmètre du carré :", 4 * 5);
+
+// Calculez l'aire d'un rectangle 8×6 :
+console.log("Aire du rectangle :", 8 * 6);
+
+// Combien font 2 puissance 8 ?
+console.log("2 puissance 8 :", 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2);
+
+// Messages colorés (bonus fun) :
+console.log("%cMessage en rouge !", "color: red; font-size: 20px;");
+console.log("%cMessage en bleu !", "color: blue; font-weight: bold;");
+```
+
+</details>
+
+### 🎯 Exercice 3 : Explorer la console
+
+{% hint style="info" %}
+**Objectif :** Découvrir les différents types de messages
+{% endhint %}
+
+```javascript
+// Testez ces différentes commandes :
+
+// Message normal
+console.log("ℹ️ Ceci est une information");
+
+// Avertissement
+console.warn("⚠️ Ceci est un avertissement");
+
+// Erreur (ne casse rien, c'est juste pour voir)
+console.error("❌ Ceci est une erreur (factice)");
+
+// Information
+console.info("📋 Information détaillée");
+```
+
+<details>
+<summary>💡 Plus d'explorations</summary>
+
+```javascript
+// Grouper des messages :
+console.group("🔵 Mes calculs");
+console.log("2 + 2 =", 4);
+console.log("3 × 3 =", 9);
+console.log("10 / 2 =", 5);
+console.groupEnd();
+
+// Messages avec émojis :
+console.log("🚀 Décollage imminent !");
+console.log("🎯 Mission accomplie !");
+console.log("🎉 Bravo, vous maîtrisez la console !");
+
+// Tester le titre de la page :
+console.log("Le titre de cette page est :", document.title);
 ```
 
 </details>

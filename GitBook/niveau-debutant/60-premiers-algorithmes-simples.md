@@ -35,7 +35,7 @@
 6. **Tester** avec différents cas
 {% endtab %}
 
-{% tab title="Types d'algorithmes" %}
+{% tab title="Types algorithmes" %}
 🔍 **Recherche** : Trouver un élément dans une liste  
 📊 **Tri** : Classer des éléments par ordre  
 🧮 **Calcul** : Somme, moyenne, minimum, maximum  

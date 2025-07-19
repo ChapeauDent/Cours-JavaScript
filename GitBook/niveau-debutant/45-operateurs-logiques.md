@@ -941,7 +941,7 @@ function estAdmin(user) {
 ### Piège 3 : Confusion entre = et ==
 
 {% tabs %}
-{% tab title="❌ Erreur d'assignation" %}
+{% tab title="❌ Erreur assignation" %}
 ```javascript
 const estConnecte = true;
 

@@ -698,7 +698,7 @@ function sauvegarderDonnees(cle, valeur) {
 ### Erreurs personnalisées avancées
 
 {% tabs %}
-{% tab title="Hiérarchie d'erreurs" %}
+{% tab title="Hiérarchie des erreurs" %}
 ```javascript
 // Classe de base
 class AppError extends Error {

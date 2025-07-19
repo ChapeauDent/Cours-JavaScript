@@ -390,7 +390,7 @@ console.log(calculerStatistiques(10, 20, 30, 40, 50));
 ```
 {% endtab %}
 
-{% tab title="Manipulation d'arrays" %}
+{% tab title="Manipulation arrays" %}
 ```javascript
 // Suppression d'éléments par index
 function supprimerParIndex(array, index) {

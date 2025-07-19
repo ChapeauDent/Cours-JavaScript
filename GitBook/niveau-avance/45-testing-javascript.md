@@ -245,7 +245,7 @@ test('custom matchers', () => {
 ```
 {% endtab %}
 
-{% tab title="🏗️ TDD & BDD Pratiques" %}
+{% tab title="🏗️ TDD et BDD Pratiques" %}
 **Test-Driven Development et Behavior-Driven Development**
 
 ### TDD : Red-Green-Refactor

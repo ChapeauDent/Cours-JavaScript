@@ -16,7 +16,7 @@
 ## 🌐 Vue d'Ensemble de l'Écosystème
 
 {% tabs %}
-{% tab title="🗺️ Cartographie de l'écosystème" %}
+{% tab title="🗺️ Cartographie écosystème" %}
 **L'écosystème JavaScript en 2025 :**
 
 ### Package Managers - Gestionnaires de dépendances

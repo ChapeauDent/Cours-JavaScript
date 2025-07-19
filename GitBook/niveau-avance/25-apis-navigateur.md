@@ -59,7 +59,7 @@
 ```
 {% endtab %}
 
-{% tab title="🎯 Stratégies d'utilisation" %}
+{% tab title="🎯 Stratégies utilisation" %}
 **Patterns d'implémentation :**
 
 ### 1. Progressive Enhancement

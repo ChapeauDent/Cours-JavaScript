@@ -195,7 +195,7 @@ console.log(compte.solde); // undefined
 ```
 {% endtab %}
 
-{% tab title="Configuration d'API" %}
+{% tab title="Configuration API" %}
 ```javascript
 function creerApiClient(baseUrl, apiKey) {
   // Données privées dans la closure
@@ -338,7 +338,7 @@ console.log(calc2.obtenirHistorique()); // ["4 × 7 = 28"]
 ### 2. 🔄 Callbacks et Event Handlers
 
 {% tabs %}
-{% tab title="Gestionnaire d'événements" %}
+{% tab title="Gestionnaire événements" %}
 ```javascript
 function creerGestionnaireClics(message) {
   let nombreClics = 0;

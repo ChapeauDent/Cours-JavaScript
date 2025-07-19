@@ -17,7 +17,7 @@
 ## 🔑 Concepts clés
 
 {% tabs %}
-{% tab title="Types d'opérateurs" %}
+{% tab title="Types opérateurs" %}
 **Arithmétiques** : `+`, `-`, `*`, `/`, `%`, `**` (calculs)  
 **Comparaison** : `==`, `===`, `!=`, `>`, `<` (comparer)  
 **Logiques** : `&&`, `||`, `!` (combiner conditions)  
@@ -128,7 +128,7 @@ let racine = nombre ** 0.5;         // 4 (√16)
 ### Exemples pratiques d'arithmétique
 
 {% tabs %}
-{% tab title="Calculateur d'âge" %}
+{% tab title="Calculateur âge" %}
 ```javascript
 function calculerAge(ageAnnees) {
     console.log(`=== Calculateur d'âge pour ${ageAnnees} ans ===`);
@@ -366,7 +366,7 @@ console.log(`x=${x}, y=${y}`);
 ```
 {% endtab %}
 
-{% tab title="Opérateurs d'assignation composée" %}
+{% tab title="Opérateurs assignation composée" %}
 ```javascript
 // Avant : notation longue
 let points = 100;

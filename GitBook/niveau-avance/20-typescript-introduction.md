@@ -726,7 +726,7 @@ console.log('Invalid product:', productValidator.validate(invalidProduct));
 ### Interfaces avancées
 
 {% tabs %}
-{% tab title="📋 Définition d'interfaces" %}
+{% tab title="📋 Définition interfaces" %}
 ```typescript
 // Interface de base
 interface User {

@@ -125,7 +125,7 @@ const pays = "France";
 ```
 {% endtab %}
 
-{% tab title="Cas d'usage pratiques" %}
+{% tab title="Cas usage pratiques" %}
 ```javascript
 // 🎯 Utilisations courantes des strings
 

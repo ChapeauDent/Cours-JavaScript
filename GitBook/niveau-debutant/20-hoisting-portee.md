@@ -55,7 +55,7 @@ function sayHello() {
 ```
 {% endtab %}
 
-{% tab title="Ce que JavaScript "voit"" %}
+{% tab title="Ce que JavaScript voit" %}
 ```javascript
 // JavaScript réorganise mentalement comme ça :
 var message; // Déclaration remontée = undefined

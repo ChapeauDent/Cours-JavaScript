@@ -55,27 +55,35 @@
 {% endtab %}
 
 {% tab title="Règle d'or moderne" %}
+En JavaScript moderne, il existe une règle simple à retenir : **commencez toujours par `const`** ! Cette règle vous évitera beaucoup d'erreurs et rendra votre code plus prévisible.
+
+**Pourquoi cette règle fonctionne-t-elle si bien ?**
+- `const` vous oblige à réfléchir : "Est-ce que cette valeur va vraiment changer ?"
+- Si la valeur ne change pas → parfait, gardez `const`
+- Si la valeur doit changer → utilisez `let` au lieu de `const`
+
+Voici comment appliquer cette règle dans la pratique :
+
 ```javascript
-// 🥇 RÈGLE D'OR : Toujours commencer par const
+// 🥇 Commencez par const pour tout
 const nom = "Alice";
 const age = 25;
 const hobbies = ["lecture", "jardinage"];
 
-// 🥈 Si réassignation nécessaire, utiliser let
+// 🥈 Changez vers let seulement si nécessaire
 let compteur = 0;
-compteur++; // Modification OK
+compteur++; // Ici on modifie, donc let était le bon choix
 
 let statut = "en cours";
-statut = "terminé"; // Changement OK
+statut = "terminé"; // Ici aussi on change, donc let
 
-// 🚫 Éviter var en JavaScript moderne
-// var ancienneVariable = "déconseillé";
+// 🚫 N'utilisez jamais var en JavaScript moderne
 ```
 
-**Ordre de priorité :**
-1. 🥇 `const` par défaut
-2. 🥈 `let` si modification nécessaire  
-3. 🚫 `var` jamais (sauf cas très spécifiques)
+**L'ordre de priorité à retenir :**
+1. 🥇 `const` par défaut (90% des cas)
+2. 🥈 `let` si vous devez modifier la variable (10% des cas)
+3. 🚫 `var` jamais (0% des cas en code moderne)
 {% endtab %}
 {% endtabs %}
 
@@ -89,14 +97,24 @@ statut = "terminé"; // Changement OK
 
 {% tabs %}
 {% tab title="Utilisation correcte" %}
+Le mot-clé `const` est parfait pour toutes les valeurs qui ne vont pas changer. Pensez-y comme à un coffre-fort : une fois qu'on y met quelque chose, on ne peut plus le changer !
+
+**Quand utiliser `const` :**
+- Pour stocker votre nom, votre âge, des informations fixes
+- Pour les calculs mathématiques (comme PI = 3.14159)
+- Pour les fonctions que vous créez
+- Pour les objets et tableaux (même si vous pouvez modifier leur contenu)
+
+Voici des exemples concrets de bonne utilisation :
+
 ```javascript
-// ✅ Déclarations valides avec const
+// ✅ Informations personnelles fixes
 const nom = "Alice";
 const age = 25;
 const PI = 3.14159;
 const estMajeur = true;
 
-// ✅ Objets et tableaux avec const
+// ✅ Objets et tableaux - la "boîte" ne change pas, mais le contenu oui
 const personne = {
     nom: "Bob",
     age: 30
@@ -104,7 +122,7 @@ const personne = {
 
 const fruits = ["pomme", "banane", "orange"];
 
-// ✅ Fonctions avec const
+// ✅ Fonctions - créées une fois, utilisées partout
 const saluer = function(nom) {
     return `Bonjour ${nom} !`;
 };
@@ -117,42 +135,68 @@ console.log(calculerAire(5));        // 78.53975
 {% endtab %}
 
 {% tab title="Erreurs courantes" %}
+Même si `const` semble simple, il y a quelques pièges à éviter ! Voici les erreurs les plus fréquentes que font les débutants :
+
+**Erreur #1 : Essayer de changer une constante**
+Une fois qu'une variable `const` est créée, vous ne pouvez pas lui donner une nouvelle valeur. C'est comme essayer de changer votre date de naissance - impossible !
+
+**Erreur #2 : Oublier de donner une valeur**
+Contrairement à `let`, vous DEVEZ donner une valeur à une variable `const` dès que vous la créez.
+
+**Erreur #3 : Confusion avec les objets**
+Attention ! `const` empêche de changer la variable elle-même, mais pas le contenu des objets ou tableaux.
+
+Regardons ces erreurs en détail :
+
 ```javascript
-// ❌ Erreurs avec const
-
-// 1. Réassignation interdite
+// ❌ ERREUR #1 : Réassignation interdite
 const nom = "Alice";
-// nom = "Bob";  // TypeError: Assignment to constant variable
+// nom = "Bob";  // ⚠️ ERREUR ! TypeError: Assignment to constant variable
 
-// 2. Déclaration sans valeur
-// const vide;  // SyntaxError: Missing initializer
+// ❌ ERREUR #2 : Déclaration sans valeur
+// const vide;  // ⚠️ ERREUR ! SyntaxError: Missing initializer
 
-// 3. Redéclaration interdite
+// ❌ ERREUR #3 : Redéclaration interdite
 const couleur = "rouge";
-// const couleur = "bleu";  // SyntaxError: Identifier 'couleur' has already been declared
+// const couleur = "bleu";  // ⚠️ ERREUR ! Cette variable existe déjà
 
-// ⚠️ Attention : const n'empêche pas la mutation des objets !
+// ✅ MAIS : Vous pouvez modifier le CONTENU des objets
 const utilisateur = { nom: "Alice", age: 25 };
-utilisateur.age = 26;  // ✅ OK ! On modifie le contenu, pas la référence
-utilisateur.ville = "Paris";  // ✅ OK ! Ajout de propriété
+utilisateur.age = 26;  // ✅ OK ! On change le contenu, pas la boîte
+utilisateur.ville = "Paris";  // ✅ OK ! On ajoute dans la boîte
 
 console.log(utilisateur);  // { nom: "Alice", age: 26, ville: "Paris" }
 
-// Mais réassigner l'objet entier est interdit :
-// utilisateur = { nom: "Bob" };  // ❌ TypeError
+// ❌ Mais changer toute la boîte est interdit :
+// utilisateur = { nom: "Bob" };  // ⚠️ ERREUR ! TypeError
 ```
 {% endtab %}
 
-{% tab title="Cas d'usage" %}
-```javascript
-// 🎯 Utilisez const pour :
+{% tab title="Cas pratiques" %}
+Maintenant que vous comprenez `const`, voyons dans quelles situations concrètes vous devriez l'utiliser. Ces exemples vous montrent les cas les plus courants dans de vrais programmes :
 
+**1. Valeurs fixes et constantes**
+Utilisez `const` pour toutes les valeurs qui ne changent jamais, comme les taxes, les limites, ou les tailles d'écran.
+
+**2. Messages et URLs**
+Pour tous les textes fixes de votre application, comme les messages d'accueil ou les adresses de sites web.
+
+**3. Configuration d'applications**
+Pour organiser les paramètres de votre programme dans un seul endroit.
+
+**4. Fonctions**
+Toutes vos fonctions peuvent être stockées dans des variables `const`.
+
+**5. Éléments HTML**
+Une fois que vous trouvez un bouton ou un formulaire sur votre page, stockez-le dans une `const`.
+
+```javascript
 // 1. Valeurs numériques fixes
 const TAUX_TVA = 0.20;
 const MAX_TENTATIVES = 3;
 const LARGEUR_ECRAN = 1920;
 
-// 2. Chaînes de caractères fixes
+// 2. Messages et URLs
 const MESSAGE_BIENVENUE = "Bienvenue sur notre site !";
 const URL_API = "https://api.monsite.com";
 const VERSION = "1.2.3";
@@ -173,7 +217,7 @@ const validerEmail = (email) => {
     return email.includes('@') && email.includes('.');
 };
 
-// 5. Sélecteurs DOM (une fois trouvés)
+// 5. Éléments HTML (une fois trouvés)
 const boutonSubmit = document.getElementById('submit');
 const formulaire = document.querySelector('#monFormulaire');
 ```
@@ -190,18 +234,29 @@ const formulaire = document.querySelector('#monFormulaire');
 
 {% tabs %}
 {% tab title="Utilisation typique" %}
-```javascript
-// ✅ Cas d'usage classiques de let
+Le mot-clé `let` est parfait quand vous savez que la valeur de votre variable va changer au cours de votre programme. Pensez-y comme à un carnet où vous pouvez effacer et réécrire !
 
-// 1. Compteurs et itérateurs
+**Quand utiliser `let` :**
+- Pour les compteurs (qui augmentent ou diminuent)
+- Pour les variables qui changent selon des conditions (if/else)
+- Pour accumuler des résultats (comme additionner des nombres)
+- Pour gérer des états temporaires (connecté/déconnecté, actif/inactif)
+
+**Pourquoi `let` est mieux que `var` :**
+`let` respecte les "blocs" de code (les accolades {}), ce qui évite des bugs bizarres !
+
+Voici des exemples concrets où `let` est le bon choix :
+
+```javascript
+// 1. Compteurs et boucles
 let compteur = 0;
 for (let i = 0; i < 5; i++) {
     compteur += i;
-    console.log(`Itération ${i}, compteur: ${compteur}`);
+    console.log(`Tour ${i}, compteur: ${compteur}`);
 }
-console.log(`Compteur final: ${compteur}`); // 10
+console.log(`Total final: ${compteur}`); // 10
 
-// 2. Variables conditionnelles
+// 2. Variables qui changent selon l'heure
 let message;
 const heure = new Date().getHours();
 
@@ -215,17 +270,17 @@ if (heure < 12) {
 
 console.log(message);
 
-// 3. Accumulation de données
+// 3. Accumuler des données
 let resultat = 0;
 const nombres = [1, 2, 3, 4, 5];
 
 for (const nombre of nombres) {
-    resultat += nombre;
+    resultat += nombre; // On additionne chaque nombre
 }
 
 console.log(`Somme: ${resultat}`); // 15
 
-// 4. États temporaires
+// 4. États qui changent
 let estConnecte = false;
 let tentatives = 0;
 
@@ -235,100 +290,119 @@ function seConnecter(motDePasse) {
         estConnecte = true;
         console.log("Connexion réussie !");
     } else {
-        console.log(`Échec de connexion. Tentative ${tentatives}`);
+        console.log(`Échec. Tentative ${tentatives}`);
     }
 }
 ```
 {% endtab %}
 
 {% tab title="Portée de bloc" %}
-```javascript
-// 🎯 let respecte la portée de bloc
+Voici l'une des différences les plus importantes entre `let` et l'ancien `var` : **`let` respecte les blocs de code** ! 
 
+**Qu'est-ce qu'un bloc ?** C'est tout ce qui est entre des accolades `{}` : les if, les boucles, ou même des accolades seules.
+
+**Pourquoi c'est important ?** Imaginez que vous ayez plusieurs pièces dans une maison. Avec `let`, chaque variable reste dans sa pièce. Avec `var`, les variables se promènent partout dans la maison, ce qui crée du désordre !
+
+**Règle simple :** Une variable `let` créée dans un bloc (entre `{}`) n'existe QUE dans ce bloc. Dès qu'on sort du bloc, elle disparaît.
+
+Voici comment ça fonctionne en pratique :
+
+```javascript
 function demonstrationPortee() {
-    console.log("=== Portée de bloc avec let ===");
+    console.log("=== Variables let et les blocs ===");
     
-    // 1. Variable de fonction
-    let fonctionVariable = "Accessible dans toute la fonction";
+    // 1. Variable de fonction - accessible partout dans la fonction
+    let fonctionVariable = "Je suis accessible dans toute la fonction";
     
     if (true) {
-        // 2. Variable de bloc
-        let blocVariable = "Accessible seulement dans ce bloc if";
-        console.log(fonctionVariable); // ✅ Accessible
-        console.log(blocVariable);     // ✅ Accessible
+        // 2. Variable de bloc - accessible seulement ici
+        let blocVariable = "Je suis prisonnière de ce bloc if";
+        console.log(fonctionVariable); // ✅ OK, la variable de fonction est visible
+        console.log(blocVariable);     // ✅ OK, on est dans le bon bloc
     }
     
-    console.log(fonctionVariable); // ✅ Accessible
-    // console.log(blocVariable);  // ❌ ReferenceError: blocVariable is not defined
+    console.log(fonctionVariable); // ✅ OK, toujours dans la fonction
+    // console.log(blocVariable);  // ❌ ERREUR ! Elle a disparu !
     
-    // 3. Boucles avec portée propre
+    // 3. Chaque boucle a sa propre "bulle"
     for (let i = 0; i < 3; i++) {
-        let boucleVariable = `Valeur ${i}`;
-        console.log(boucleVariable);
+        let messageSecret = `Message secret ${i}`;
+        console.log(messageSecret);
     }
     
-    // console.log(i);             // ❌ ReferenceError: i is not defined
-    // console.log(boucleVariable); // ❌ ReferenceError: boucleVariable is not defined
+    // console.log(i);             // ❌ ERREUR ! i n'existe plus
+    // console.log(messageSecret); // ❌ ERREUR ! messageSecret non plus
 }
 
 demonstrationPortee();
 
-// 🎯 Comparaison avec des blocs multiples
+// 4. Même nom, blocs différents = variables différentes !
 {
-    let bloc1 = "Je suis dans le bloc 1";
-    console.log(bloc1); // ✅ OK
+    let temperature = "Chaud dans ce bloc !";
+    console.log(temperature);
 }
 
 {
-    let bloc2 = "Je suis dans le bloc 2";
-    console.log(bloc2); // ✅ OK
-    // console.log(bloc1); // ❌ ReferenceError: bloc1 is not defined
+    let temperature = "Froid dans cet autre bloc !"; // ✅ OK, bloc différent
+    console.log(temperature);
 }
 ```
 {% endtab %}
 
 {% tab title="Réassignation vs redéclaration" %}
+Avec `let`, il y a deux choses importantes à comprendre : la différence entre **changer la valeur** (réassignation) et **recréer la variable** (redéclaration).
+
+**Réassignation = Changer le contenu de la boîte** ✅ Autorisé
+C'est comme vider votre sac à dos et y mettre autre chose. La boîte reste la même, mais le contenu change.
+
+**Redéclaration = Créer une nouvelle boîte du même nom** ❌ Interdit dans le même endroit
+C'est comme avoir deux sacs à dos avec exactement la même étiquette dans la même chambre. JavaScript ne sait plus lequel choisir !
+
+**Mais attention :** Vous pouvez avoir le même nom dans des endroits différents (comme avoir un sac "école" dans votre chambre ET un sac "école" dans le salon).
+
+Voici comment ça marche :
+
 ```javascript
-// ✅ Réassignation autorisée avec let
+// ✅ RÉASSIGNATION : Changer le contenu - Autorisé
 let score = 0;
 console.log(score); // 0
 
-score = 10;
+score = 10;         // Je change le contenu
 console.log(score); // 10
 
-score = score + 5;
+score = score + 5;  // Je calcule et je change
 console.log(score); // 15
 
-score += 10;
+score += 10;        // Raccourci pour ajouter
 console.log(score); // 25
 
-// ❌ Redéclaration interdite dans le même scope
+// ❌ REDÉCLARATION : Même nom, même endroit - Interdit
 let joueur = "Alice";
-// let joueur = "Bob"; // SyntaxError: Identifier 'joueur' has already been declared
+// let joueur = "Bob"; // ⚠️ ERREUR ! Ce nom est déjà pris ici
 
-// ✅ Mais redéclaration possible dans des scopes différents
-function scope1() {
-    let variable = "Scope 1";
-    console.log(variable);
+// ✅ Mais dans des fonctions différentes, c'est OK
+function equipe1() {
+    let capitaine = "Sarah"; // OK, on est dans equipe1
+    console.log(capitaine);
 }
 
-function scope2() {
-    let variable = "Scope 2"; // ✅ OK, scope différent
-    console.log(variable);
+function equipe2() {
+    let capitaine = "Lucas"; // ✅ OK, on est dans equipe2 maintenant
+    console.log(capitaine);
 }
 
-scope1(); // "Scope 1"
-scope2(); // "Scope 2"
+equipe1(); // "Sarah"
+equipe2(); // "Lucas"
 
-// ✅ Même dans des blocs différents
+// ✅ Dans des blocs séparés aussi, c'est OK
 {
-    let temp = "Bloc A";
-    console.log(temp);
+    let animal = "Chat";
+    console.log(animal);
 }
 
 {
-    let temp = "Bloc B"; // ✅ OK, bloc différent
-    console.log(temp);
+    let animal = "Chien"; // ✅ OK, nouveau bloc, nouvel animal !
+    console.log(animal);
 }
 ```
 {% endtab %}
@@ -344,122 +418,157 @@ scope2(); // "Scope 2"
 
 {% tabs %}
 {% tab title="Problèmes de portée" %}
+`var` était l'ancienne façon de créer des variables en JavaScript. Mais il a des comportements bizarres qui peuvent créer des bugs difficiles à comprendre ! Voici pourquoi vous devez l'éviter :
+
+**Problème #1 : Les variables "fuient" des blocs**
+Avec `var`, les variables ne restent pas dans leur bloc (entre `{}`). Elles se promènent partout dans la fonction ! C'est comme si toutes vos affaires sortaient de votre chambre pour envahir toute la maison.
+
+**Problème #2 : Les boucles dysfonctionnent**
+Dans les boucles avec `var`, toutes les variables partagent la même "boîte", ce qui crée des résultats inattendus.
+
+**Problème #3 : Pollution de l'environnement global**
+Les variables `var` globales se collent à l'objet `window` du navigateur, ce qui peut casser d'autres scripts.
+
+Regardons ces problèmes en action :
+
 ```javascript
-// ⚠️ Problème 1 : Portée de fonction au lieu de bloc
+// ⚠️ PROBLÈME #1 : Les variables fuient des blocs
 
 function problemeVar() {
-    console.log("=== Problèmes avec var ===");
+    console.log("=== Les problèmes de var ===");
     
     if (true) {
-        var varVariable = "Je 'fuite' du bloc !";
-        let letVariable = "Je reste dans le bloc";
+        var varVariable = "Je m'échappe du bloc !";
+        let letVariable = "Moi je reste bien sage dans mon bloc";
     }
     
-    console.log(varVariable); // ✅ "Je 'fuite' du bloc !" - PROBLÉMATIQUE !
-    // console.log(letVariable); // ❌ ReferenceError - NORMAL
+    console.log(varVariable); // ✅ "Je m'échappe du bloc !" - PROBLÉMATIQUE !
+    // console.log(letVariable); // ❌ ERREUR - C'est normal et bien !
 }
 
-// ⚠️ Problème 2 : Boucles for classique
-console.log("=== Boucle avec var (problématique) ===");
+// ⚠️ PROBLÈME #2 : Boucles cassées avec var
+console.log("=== Boucle avec var (ne marche pas) ===");
 for (var i = 0; i < 3; i++) {
     setTimeout(() => {
         console.log("var i:", i); // Affiche 3, 3, 3 (pas 0, 1, 2 !)
     }, 100);
 }
 
-console.log("=== Boucle avec let (correct) ===");
+console.log("=== Boucle avec let (marche bien) ===");
 for (let j = 0; j < 3; j++) {
     setTimeout(() => {
         console.log("let j:", j); // Affiche 0, 1, 2 (correct !)
     }, 200);
 }
 
-// ⚠️ Problème 3 : Pollution de l'objet global
-var variableGlobale = "Je pollue l'objet global";
-console.log(window.variableGlobale); // "Je pollue l'objet global" (dans le navigateur)
+// ⚠️ PROBLÈME #3 : Pollution globale
+var variableSale = "Je pollue l'environnement global";
+console.log(window.variableSale); // "Je pollue..." (dans le navigateur)
 
-let variablePropreLet = "Je ne pollue pas";
-console.log(window.variablePropreLet); // undefined (bien !)
+let variablePropre = "Moi je reste propre";
+console.log(window.variablePropre); // undefined (bien !)
 ```
 {% endtab %}
 
 {% tab title="Hoisting déroutant" %}
+Le "hoisting" est un comportement étrange de JavaScript avec `var`. En gros, JavaScript fait semblant de "remonter" toutes les variables `var` au début de la fonction, mais sans leur valeur ! C'est comme si vous disiez "J'ai une boîte quelque part" avant même de l'avoir fabriquée.
+
+**Ce qui se passe dans votre tête :**
+Vous écrivez le code de haut en bas, pensant que les variables n'existent que quand vous les déclarez.
+
+**Ce qui se passe réellement :**
+JavaScript "remonte" secrètement toutes les déclarations `var` au début, mais les valeurs restent où vous les avez mises. Résultat : vous pouvez utiliser une variable avant de lui donner une valeur !
+
+**Avec `let` et `const` :**
+Pas de hoisting bizarre ! Si vous utilisez une variable avant de la déclarer, JavaScript vous dit clairement "Cette variable n'existe pas encore". C'est beaucoup plus clair !
+
 ```javascript
-// ⚠️ Hoisting avec var : comportement déroutant
+// ⚠️ COMPORTEMENT BIZARRE AVEC var
 
-function demonstrationHoisting() {
-    console.log("=== Hoisting avec var ===");
+console.log("=== Le hoisting bizarre de var ===");
+
+function testHoisting() {
+    console.log("Valeur de maVariable:", maVariable); // undefined (pas d'erreur !)
     
-    // Ceci fonctionne mais affiche undefined (déroutant !)
-    console.log("Avant déclaration:", maVarVariable); // undefined
+    // ... du code ...
     
-    var maVarVariable = "Maintenant j'ai une valeur";
+    var maVariable = "Je suis là !";
     
-    console.log("Après déclaration:", maVarVariable); // "Maintenant j'ai une valeur"
-    
-    // 🎯 Ce qui se passe réellement (équivalent) :
-    // var maVarVariable; // Déclaration "remontée" en haut
-    // console.log("Avant déclaration:", maVarVariable); // undefined
-    // maVarVariable = "Maintenant j'ai une valeur"; // Assignation reste à sa place
+    console.log("Valeur après affectation:", maVariable); // "Je suis là !"
 }
 
-function demonstrationHoistingLet() {
-    console.log("=== Hoisting avec let/const ===");
+// Ce que JavaScript fait RÉELLEMENT dans les coulisses :
+function ceQueJavaScriptVoit() {
+    var maVariable; // Déclaration "remontée" au début
     
-    // Ceci produit une erreur claire (préférable !)
-    try {
-        console.log("Avant déclaration:", maLetVariable); // ReferenceError
-    } catch (error) {
-        console.log("Erreur attendue:", error.message);
-    }
+    console.log("Valeur de maVariable:", maVariable); // undefined
     
-    let maLetVariable = "Je ne suis accessible qu'après ma déclaration";
-    console.log("Après déclaration:", maLetVariable);
+    // ... du code ...
+    
+    maVariable = "Je suis là !"; // Seule l'affectation reste ici
+    
+    console.log("Valeur après affectation:", maVariable);
 }
 
-demonstrationHoisting();
-demonstrationHoistingLet();
+// ✅ COMPORTEMENT NORMAL AVEC let/const
+
+function testSansHoisting() {
+    // console.log(maVariableLet); // ❌ ERREUR - C'est clair !
+    
+    let maVariableLet = "Je suis déclarée proprement";
+    console.log("Valeur normale:", maVariableLet);
+}
+
+console.log("=== Test avec var ===");
+testHoisting();
+
+console.log("=== Test avec let ===");
+testSansHoisting();
 ```
 {% endtab %}
 
 {% tab title="Redéclaration problématique" %}
+Avec `var`, JavaScript vous laisse créer plusieurs variables avec le même nom ! C'est comme avoir plusieurs boîtes avec la même étiquette dans votre chambre - vous ne savez plus laquelle utiliser. Et souvent, c'est accidentel et ça crée des bugs !
+
+**Le problème :**
+Quand vous écrivez du code long, vous pouvez oublier qu'une variable existe déjà. Avec `var`, JavaScript ne vous avertit pas - il écrase silencieusement l'ancienne valeur !
+
+**La solution avec let/const :**
+Si vous essayez de créer deux variables avec le même nom, JavaScript vous dit immédiatement "Stop ! Ce nom est déjà pris !" C'est comme un gardien qui vérifie qu'il n'y a pas de doublons.
+
+**Pourquoi c'est important :**
+Dans un vrai projet, vous pouvez avoir des milliers de lignes de code. Sans protection contre les noms en double, vous risquez d'écraser des variables importantes par accident !
+
 ```javascript
-// ⚠️ var autorise la redéclaration (source d'erreurs)
+// ⚠️ PROBLÈME : var autorise la redéclaration
+
+console.log("=== Redéclaration avec var (dangereux) ===");
 
 var utilisateur = "Alice";
 console.log("Premier utilisateur:", utilisateur); // "Alice"
 
 // Plus loin dans le code... (accidentellement)
-var utilisateur = "Bob"; // ⚠️ Aucune erreur, mais peut être involontaire !
-console.log("Utilisateur écrasé:", utilisateur); // "Bob"
+var utilisateur = "Bob"; // ⚠️ Aucune erreur, mais c'était peut-être involontaire !
+console.log("Utilisateur écrasé:", utilisateur); // "Bob" - Alice a disparu !
 
-// ✅ Avec let/const, l'erreur est immédiate
+// ✅ SOLUTION : let/const empêchent les redéclarations
+
+console.log("=== Protection avec let/const ===");
+
 let produit = "Ordinateur";
-try {
-    let produit = "Tablette"; // SyntaxError immediate
-} catch (error) {
-    console.log("Erreur de redéclaration détectée:", error.message);
-}
+console.log("Produit original:", produit);
 
-// 🎯 Comparaison dans des fonctions
-function avecVar() {
-    var resultat = "Premier";
-    var resultat = "Deuxième"; // ⚠️ Silencieusement autorisé
-    return resultat;
-}
+// Cette ligne provoquerait une erreur immédiate :
+// let produit = "Tablette"; // ❌ SyntaxError: Identifier 'produit' has already been declared
 
-function avecLet() {
-    let resultat = "Premier";
-    try {
-        let resultat = "Deuxième"; // ❌ Erreur détectée
-    } catch (error) {
-        console.log("Redéclaration empêchée avec let");
-    }
-    return resultat;
-}
+// Pour changer la valeur, on fait simplement :
+produit = "Tablette neuve"; // ✅ Modification autorisée
+console.log("Produit modifié:", produit);
 
-console.log("Avec var:", avecVar());      // "Deuxième"
-console.log("Avec let:", avecLet());      // "Premier"
+// Avec const, même la modification est interdite :
+const marque = "Apple";
+// marque = "Samsung"; // ❌ TypeError: Assignment to constant variable
+console.log("Marque protégée:", marque);
 ```
 {% endtab %}
 {% endtabs %}
@@ -470,33 +579,64 @@ console.log("Avec let:", avecLet());      // "Premier"
 
 {% tabs %}
 {% tab title="Portée globale" %}
-```javascript
-// 🌍 Portée globale : accessible partout
+La portée globale, c'est comme la salle commune de votre maison : tout le monde peut y accéder ! Les variables globales sont créées en dehors de toute fonction ou bloc, et elles sont visibles partout dans votre programme.
 
-// Variables globales
-const SITE_NAME = "Mon Super Site";
-let utilisateurConnecte = null;
+**Avantages :**
+- Accessibles depuis n'importe quelle fonction
+- Pratiques pour des valeurs utilisées partout (comme le nom du site, la langue, etc.)
+
+**Inconvénients :**
+- Risque de conflits entre différentes parties du code
+- Plus difficile de déboguer quand il y a des problèmes
+- Peuvent être modifiées n'importe où (risqué !)
+
+**Conseil important :**
+Utilisez les variables globales avec parcimonie ! C'est comme la télé dans le salon - si tout le monde peut la changer, ça peut créer des disputes ! 😄
+
+```javascript
+// 🌍 VARIABLES GLOBALES (accessibles partout)
+
+const SITE_NAME = "Mon Super Site"; // Constante globale (recommandé)
+let utilisateurConnecte = null;      // Variable globale (à utiliser avec prudence)
 
 function afficherSite() {
-    console.log(`Bienvenue sur ${SITE_NAME}`); // ✅ Accessible
+    console.log(`Bienvenue sur ${SITE_NAME}`); // ✅ Accessible partout
 }
 
 function connecterUtilisateur(nom) {
-    utilisateurConnecte = nom; // ✅ Modification possible
+    utilisateurConnecte = nom; // ✅ Modification possible depuis n'importe où
     console.log(`${nom} est maintenant connecté`);
 }
 
 function obtenirUtilisateur() {
-    return utilisateurConnecte; // ✅ Lecture possible
+    return utilisateurConnecte; // ✅ Lecture possible depuis n'importe où
 }
 
-// Test
-afficherSite();                    // "Bienvenue sur Mon Super Site"
-connecterUtilisateur("Alice");     // "Alice est maintenant connecté"
-console.log(obtenirUtilisateur()); // "Alice"
+function deconnecterUtilisateur() {
+    utilisateurConnecte = null; // ✅ Remise à zéro possible
+    console.log("Utilisateur déconnecté");
+}
 
-// ⚠️ Attention : éviter trop de variables globales
-// Bonne pratique : utiliser des modules ou des objets pour organiser
+// Test des fonctions
+console.log("=== Test des variables globales ===");
+afficherSite();                        // "Bienvenue sur Mon Super Site"
+connecterUtilisateur("Alice");         // "Alice est maintenant connecté"
+console.log("Utilisateur actuel:", obtenirUtilisateur()); // "Alice"
+deconnecterUtilisateur();              // "Utilisateur déconnecté"
+console.log("Utilisateur après déconnexion:", obtenirUtilisateur()); // null
+
+// ⚠️ Problème potentiel : modification accidentelle
+function fonctionMalicieuse() {
+    utilisateurConnecte = "Hacker"; // Oops ! Modification non désirée
+}
+
+console.log("=== Avant la fonction malicieuse ===");
+connecterUtilisateur("Bob");
+console.log("Utilisateur:", obtenirUtilisateur()); // "Bob"
+
+console.log("=== Après la fonction malicieuse ===");
+fonctionMalicieuse();
+console.log("Utilisateur:", obtenirUtilisateur()); // "Hacker" - Problème !
 ```
 {% endtab %}
 

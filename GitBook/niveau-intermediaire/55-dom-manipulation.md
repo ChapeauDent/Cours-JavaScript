@@ -432,7 +432,7 @@ document.body.appendChild(div);
 ```
 {% endtab %}
 
-{% tab title="Méthodes d'insertion" %}
+{% tab title="Méthodes insertion" %}
 ```javascript
 const container = document.querySelector('#container');
 const newElement = document.createElement('div');
@@ -456,7 +456,7 @@ oldElement.replaceWith(newElement);
 ```
 {% endtab %}
 
-{% tab title="Clonage d'éléments" %}
+{% tab title="Clonage éléments" %}
 ```javascript
 const original = document.querySelector('#template');
 

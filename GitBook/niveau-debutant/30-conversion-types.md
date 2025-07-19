@@ -125,7 +125,7 @@ parseInt("FF", 16);      // 255 (hexadécimal)
 {% endhint %}
 
 {% tabs %}
-{% tab title="Avec l'opérateur +" %}
+{% tab title="Avec opérateur +" %}
 ```javascript
 // + avec au moins un string = concaténation
 console.log("5" + 3);      // "53" ⚠️
@@ -567,7 +567,7 @@ function estVide(valeur) {
 ### Piège 3 : NaN et les calculs
 
 {% tabs %}
-{% tab title="❌ Propagation d'erreurs" %}
+{% tab title="❌ Propagation erreurs" %}
 ```javascript
 let age = Number("abc");     // NaN
 let ageFutur = age + 5;      // NaN (NaN + anything = NaN)
@@ -580,7 +580,7 @@ console.log(NaN / 10);       // NaN
 ```
 {% endtab %}
 
-{% tab title="✅ Gestion d'erreurs" %}
+{% tab title="✅ Gestion erreurs" %}
 ```javascript
 function calculerAgeFutur(ageTexte, annees) {
   const age = Number(ageTexte);
